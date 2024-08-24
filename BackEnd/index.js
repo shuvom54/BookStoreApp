@@ -15,7 +15,13 @@ const app = express();
 //   }
 // ));
 
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://book-store-app-frontend.vercel.app/"],
+    method:["POST","GET"],
+    credentials:true
+  }
+));
 app.use(express.json());
 mongoose.connect('mongodb+srv://shuvom2023:shuvom@2002@cluster0.76pix.mongodb.net/');
 
